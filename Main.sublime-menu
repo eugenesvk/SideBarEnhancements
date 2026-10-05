@@ -1,42 +1,22 @@
 [
-	{
-		"caption": "File",
-		"mnemonic": "F",
-		"id": "file",
-		"children": [
-			{
-				"command": "side_bar_save_as_admin",
-				"caption": "Save as Admin"
-			}
-		]
-	},
-	{
-		"id": "preferences",
-		"children": [
-			{
-				"id": "package-settings",
-				"children": [
-					{
-						"caption": "Side Bar",
-						"children": [
-							{
-								"command": "open_file",
-								"args": {
-									"file": "${packages}/SideBarEnhancements/Side Bar.sublime-settings"
-								},
-								"caption": "Settings – Default"
-							},
-							{
-								"command": "open_file",
-								"args": {
-									"file": "${packages}/User/Side Bar.sublime-settings"
-								},
-								"caption": "Settings – User"
-							}
-						]
-					}
-				]
-			}
-		]
-	}
+{"id":"file"       ,"children":[
+  {"command":"side_bar_save_as_admin"	,"caption":"Save as Admin"},
+]},
+{"id":"preferences","children":[
+  {"id":"package-settings","children":[
+    {    "caption":"𝐔 User Interface","children":[
+      {  "caption":"𝐒 Side Bar"      ,"children":[
+        {"caption":"𝐀 Settings — Default+User side-by-side","command": "edit_settings"	,"args":{
+          "base_file":"${packages}/SideBarEnhancements/Side Bar.sublime-settings",
+          "user_file":"${packages}/User/Side Bar.sublime-settings",
+          "default"  :"{\n$0\n}\n"}},
+        {"caption":"𝐓 Settings — Default+User tabbed"	     ,"command":"chain"	,"args":{"commands":[
+          {"command":"open_file","args":{"file":"${packages}/SideBarEnhancements/Side Bar.sublime-settings"}},
+          {"command":"open_file","args":{"file":"${packages}/User/Side Bar.sublime-settings"}},]}},
+        {"caption":"𝐃 Settings — Default","command":"open_file","args":{"file":"${packages}/SideBarEnhancements/Side Bar.sublime-settings"}},
+        {"caption":"𝐅 Settings — User"   ,"command":"open_file","args":{"file":"${packages}/User/Side Bar.sublime-settings"               }}
+      ]}
+    ]}
+  ]}
+]}
 ]
